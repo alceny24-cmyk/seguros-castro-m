@@ -1,0 +1,16 @@
+{
+  "name": "Inversiones Castro & M SRL",
+  "short_name": "Castro & M",
+  "description": "Seguros de salud, vida, vehículo, hogar, viaje y empresariales en Bayahíbe y Dominicus.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a6e",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

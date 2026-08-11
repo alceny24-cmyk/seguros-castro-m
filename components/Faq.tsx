@@ -2,44 +2,10 @@
 
 import { useState } from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
-import type { FaqItem } from "@/types/faq";
+import type { FaqItemContent, Dictionary } from "@/lib/i18n/types";
 import { buildWhatsappLink } from "@/lib/contact";
 
-const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: "¿Qué tipos de seguros ofrecen?",
-    answer:
-      "Ofrecemos seguros de salud, vida, vehículos, hogar, viajes y seguros empresariales adaptados a sus necesidades específicas.",
-  },
-  {
-    question: "¿Cuánto cuesta un seguro con ustedes?",
-    answer:
-      "El costo depende del tipo de cobertura, el perfil de riesgo y tus necesidades específicas. Escríbenos por WhatsApp y te damos una cotización personalizada sin compromiso.",
-    ctaLabel: "Pedir cotización",
-    ctaMessage: "Hola. Quisiera saber cuánto costaría un seguro para mi caso.",
-  },
-  {
-    question: "¿Cómo puedo cotizar un seguro?",
-    answer:
-      "Puede contactarnos directamente por WhatsApp para recibir una cotización personalizada.",
-    ctaLabel: "Cotizar ahora",
-    ctaMessage: "Hola. Quisiera cotizar un seguro.",
-  },
-  {
-    question: "¿Atienden en toda la zona de Bayahíbe?",
-    answer:
-      "Sí, prestamos servicios en Bayahíbe, Dominicus, San Rafael del Yuma, Boca de Yuma, Boca de Chavón, Benerito y Padre Nuestro.",
-  },
-  {
-    question: "¿Ofrecen seguros para empresas del sector turístico?",
-    answer:
-      "Sí, contamos con planes diseñados específicamente para hoteles, restaurantes, operadores turísticos y empresas del sector.",
-    ctaLabel: "Consultar plan empresarial",
-    ctaMessage: "Hola. Quisiera información sobre seguros para mi empresa del sector turístico.",
-  },
-];
-
-function FaqRow({ item, index }: { item: FaqItem; index: number }) {
+function FaqRow({ item, index }: { item: FaqItemContent; index: number }) {
   const [open, setOpen] = useState(false);
   const panelId = `faq-panel-${index}`;
   const buttonId = `faq-button-${index}`;
@@ -95,16 +61,16 @@ function FaqRow({ item, index }: { item: FaqItem; index: number }) {
   );
 }
 
-export function Faq() {
+export function Faq({ dict }: { dict: Dictionary }) {
   return (
     <section id="faq" className="bg-bg">
       <div className="mx-auto max-w-[700px] px-6 py-16 sm:py-24">
         <h2 className="text-center font-display text-[clamp(1.5rem,2.5vw+1rem,2.25rem)] font-medium text-ink">
-          Preguntas frecuentes
+          {dict.faq.title}
         </h2>
 
         <div className="mt-12 border-t border-border">
-          {FAQ_ITEMS.map((item, index) => (
+          {dict.faq.items.map((item, index) => (
             <FaqRow key={item.question} item={item} index={index} />
           ))}
         </div>

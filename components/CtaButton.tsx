@@ -3,7 +3,7 @@ import { buildWhatsappLink } from "@/lib/contact";
 
 type CtaButtonProps = {
   variant?: "primary" | "secondary";
-  message?: string;
+  message: string;
   href?: string;
   external?: boolean;
   className?: string;

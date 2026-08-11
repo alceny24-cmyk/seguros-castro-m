@@ -8,10 +8,10 @@ import { Faq } from "@/components/Faq";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
-import { es } from "@/lib/i18n/es";
+import { it } from "@/lib/i18n/it";
 
-export default function Home() {
-  const dict = es;
+export default function HomeIt() {
+  const dict = it;
 
   return (
     <>

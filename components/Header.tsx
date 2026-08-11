@@ -3,18 +3,18 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { CtaButton } from "@/components/CtaButton";
-import { DEFAULT_WHATSAPP_MESSAGE } from "@/lib/contact";
+import type { Dictionary } from "@/lib/i18n/types";
 
-const NAV_LINKS = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#faq", label: "Preguntas" },
-  { href: "#contacto", label: "Contacto" },
-];
-
-export function Header() {
+export function Header({ dict }: { dict: Dictionary }) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  const NAV_LINKS = [
+    { href: "#inicio", label: dict.nav.inicio },
+    { href: "#nosotros", label: dict.nav.nosotros },
+    { href: "#servicios", label: dict.nav.servicios },
+    { href: "#faq", label: dict.nav.faq },
+    { href: "#contacto", label: dict.nav.contacto },
+  ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/95 backdrop-blur">
@@ -26,7 +26,7 @@ export function Header() {
           Castro &amp; M
         </Link>
 
-        <nav aria-label="Navegación principal" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Navegación principal" className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -40,15 +40,18 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
-            <CtaButton message={DEFAULT_WHATSAPP_MESSAGE} className="!min-h-[42px] !px-5 !text-[14px]">
-              WhatsApp
+            <CtaButton
+              message={dict.whatsapp.defaultMessage}
+              className="!min-h-[42px] !px-5 !text-[14px]"
+            >
+              {dict.nav.whatsapp}
             </CtaButton>
           </div>
 
-          <details ref={detailsRef} className="relative md:hidden">
+          <details ref={detailsRef} className="relative lg:hidden">
             <summary
               className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-lg border border-border text-ink [&::-webkit-details-marker]:hidden"
-              aria-label="Abrir menú"
+              aria-label={dict.nav.openMenu}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -62,7 +65,10 @@ export function Header() {
                 <path d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             </summary>
-            <nav aria-label="Menú móvil" className="absolute right-0 top-[calc(100%+8px)] w-56 rounded-lg border border-border bg-bg p-2 shadow-[0_8px_20px_-8px_rgba(0,0,0,0.15)]">
+            <nav
+              aria-label={dict.nav.mobileMenu}
+              className="absolute right-0 top-[calc(100%+8px)] w-56 rounded-lg border border-border bg-bg p-2 shadow-[0_8px_20px_-8px_rgba(0,0,0,0.15)]"
+            >
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}

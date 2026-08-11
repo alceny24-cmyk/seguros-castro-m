@@ -1,10 +1,21 @@
 import Image from "next/image";
 
 const EDUCATION = [
-  "Licenciatura en Administración — UFHEC (promoción 2021)",
-  "Estudios — Universidad APEC",
-  "Estudios — Universidad de Sevilla, España",
-  "Educación secundaria — Colegio Sagrado Corazón de Jesús",
+  {
+    degree: "Licenciatura en Administración de Empresas",
+    detail: "Cum Laude",
+    year: "2017",
+  },
+  {
+    degree: "Maestría en Dirección Comercial",
+    detail: "Universidad APEC (UNAPEC)",
+    year: "2022",
+  },
+  {
+    degree: "Máster en Uso Educativo de las TIC",
+    detail: "Educación 2.0 · Universidad de Sevilla",
+    year: "2021",
+  },
 ];
 
 export function About() {
@@ -19,7 +30,7 @@ export function About() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-2xl border border-border lg:mx-0">
             <Image
               src="/images/team/esther-castro.jpg"
-              alt="Esther Castro, CEO de Inversiones Castro & M SRL"
+              alt="Esther Castro Morla, CEO de Inversiones Castro & M SRL"
               fill
               sizes="(min-width: 1024px) 360px, 80vw"
               className="object-cover"
@@ -28,28 +39,33 @@ export function About() {
 
           <div>
             <p className="text-[19px] font-semibold text-ink">
-              Esther Castro
+              Esther Castro Morla
             </p>
             <p className="mt-1 text-[14px] font-medium text-muted">
               CEO, Inversiones Castro &amp; M SRL
             </p>
-            <p className="mt-5 max-w-[55ch] text-[17px] leading-relaxed text-ink">
-              Licenciada en Administración y oriunda de Bayahíbe, dirige
-              Inversiones Castro &amp; M SRL con una formación construida
-              entre República Dominicana y España.
-            </p>
 
-            <div className="mt-6 max-w-[55ch] space-y-4 text-[15px] leading-relaxed text-muted">
+            <div className="mt-5 max-w-[55ch] space-y-4 text-[16px] leading-relaxed text-ink">
               <p>
-                Es oriunda de Bayahíbe, comunidad donde también reside, lo
-                que fortalece su vínculo con la región y con las personas y
-                empresas a las que sirve.
+                Esther Castro Morla es CEO de Inversiones Castro &amp; M SRL
+                y oriunda de Bayahíbe, comunidad donde también reside. Su
+                liderazgo está respaldado por una formación sólida en
+                administración de empresas, dirección comercial y
+                tecnologías de la información y comunicación.
               </p>
-              <p>
-                Su formación y perspectiva administrativa constituyen la
-                base profesional desde la que lidera Inversiones Castro &amp;
-                M SRL, empresa enfocada en ofrecer soluciones de seguros y
-                asesoría para personas, familias y empresas.
+              <p className="text-muted">
+                Es Licenciada en Administración de Empresas, Cum Laude, y
+                amplió su preparación con una Maestría en Dirección
+                Comercial en la Universidad APEC (UNAPEC). En España obtuvo
+                el Máster en Uso Educativo de las Tecnologías de la
+                Información y Comunicación (TIC), Educación 2.0, título
+                propio de la Universidad de Sevilla, con 65 créditos ECTS.
+              </p>
+              <p className="text-muted">
+                Esta formación constituye la base de su visión de dirección
+                y gestión al frente de Inversiones Castro &amp; M SRL,
+                empresa dedicada a ofrecer soluciones de seguros y asesoría
+                para personas, familias y empresas.
               </p>
             </div>
 
@@ -57,13 +73,26 @@ export function About() {
               <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-muted">
                 Formación académica
               </p>
-              <ul className="mt-3 space-y-2">
+              <div className="mt-4 space-y-3">
                 {EDUCATION.map((item) => (
-                  <li key={item} className="text-[15px] text-ink">
-                    {item}
-                  </li>
+                  <div
+                    key={item.degree}
+                    className="flex items-baseline justify-between gap-4 rounded-lg border border-border px-4 py-3"
+                  >
+                    <div>
+                      <p className="text-[15px] font-semibold text-ink">
+                        {item.degree}
+                      </p>
+                      <p className="mt-0.5 text-[13px] text-muted">
+                        {item.detail}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-[13px] font-medium text-muted">
+                      {item.year}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>

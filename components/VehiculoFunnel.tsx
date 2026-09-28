@@ -127,7 +127,7 @@ export function VehiculoFunnel() {
             height={1448}
             priority
             className="w-full object-cover"
-            style={{ maxHeight: "85dvh", objectPosition: "top" }}
+            style={{ maxHeight: "52dvh", objectPosition: "top" }}
           />
           {/* Gradiente inferior para transición suave al fondo oscuro */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#081729] to-transparent" />

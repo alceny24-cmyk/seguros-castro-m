@@ -9,6 +9,20 @@ export const metadata = {
   description:
     "Descubre qué opciones de seguro están disponibles para tu vehículo (2011–2020). Consulta sin compromiso con Inversiones Castro & M. Respuesta personalizada por WhatsApp.",
   robots: "noindex, nofollow",
+  openGraph: {
+    title: "¿Tu vehículo es 2011–2020? Todavía puede estar asegurado.",
+    description:
+      "Consulta sin compromiso qué opciones de seguro están disponibles para tu auto. Respuesta personalizada por WhatsApp.",
+    images: [
+      {
+        url: "/images/vehiculo-og.png",
+        width: 1080,
+        height: 1350,
+        alt: "Seguro de vehículos 2011–2020 — Inversiones Castro & M",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function CotizarVehiculoPage() {

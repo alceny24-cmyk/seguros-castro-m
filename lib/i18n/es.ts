@@ -38,6 +38,7 @@ export const es: Dictionary = {
     ctaCall: "Llámanos",
     note: "Cotización sin compromiso, directo por WhatsApp.",
     imageAlt: "Costa de Bayahíbe, República Dominicana",
+    priceBadge: "Protégete desde 55 USD",
   },
   services: {
     title: "Nuestros servicios",
@@ -64,6 +65,7 @@ export const es: Dictionary = {
           "Protección completa para tu auto o flota empresarial.",
         whatsappMessage:
           "Hola. Me interesa el seguro de vehículos. Quisiera más información.",
+        href: "/cotizar-vehiculo",
       },
       {
         title: "Seguro del Hogar",
@@ -180,6 +182,31 @@ export const es: Dictionary = {
           "Hola. Quisiera información sobre seguros para mi empresa del sector turístico.",
       },
     ],
+  },
+  leadFunnel: {
+    productName: "Global Health Protect",
+    productTagline: "Salud mundial a tu alcance",
+    coverage: "US$500,000 vitalicio por asegurado",
+    price: "Desde US$55 mensual",
+    highlights: [
+      "Cleveland Clinic · Mayo Clinic · Boston Children's",
+      "Complementaria a cualquier plan local",
+      "Cobertura en EE.UU., España, Colombia y LATAM",
+      "Concierge Internacional 24/7",
+    ],
+    title: "Cotiza Global Health Protect ahora",
+    subtitle: "Déjenos sus datos y le enviamos una cotización personalizada en minutos, sin compromiso.",
+    namePlaceholder: "Su nombre completo",
+    phonePlaceholder: "Su número de teléfono",
+    insuranceLabel: "¿Cuántas personas cubre?",
+    insuranceOptions: [
+      "Solo yo (titular)",
+      "Yo + pareja",
+      "Familia (hasta 4 miembros)",
+      "Familia numerosa (5+)",
+    ],
+    cta: "Recibir cotización por WhatsApp",
+    messageTemplate: "Hola, me interesa cotizar Global Health Protect.\n\nNombre: {name}\nTeléfono: {phone}\nCobertura para: {type}\n\nQuedo a la espera de su respuesta.",
   },
   contact: {
     title: "Contáctenos",

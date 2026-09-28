@@ -18,12 +18,14 @@ export function Services({ dict }: { dict: Dictionary }) {
         <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-0 sm:grid-cols-2 lg:grid-cols-3">
           {dict.services.items.map((service, index) => {
             const Icon = ICONS[index];
+            const isInternalLink = Boolean(service.href);
+            const linkProps = isInternalLink
+              ? { href: service.href as string }
+              : { href: buildWhatsappLink(service.whatsappMessage), target: "_blank", rel: "noopener noreferrer" };
             return (
               <a
                 key={service.title}
-                href={buildWhatsappLink(service.whatsappMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...linkProps}
                 className="group border-t border-border py-8 transition-colors duration-150"
               >
                 <Icon
@@ -38,11 +40,13 @@ export function Services({ dict }: { dict: Dictionary }) {
                   {service.description}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-primary">
-                  {dict.services.ctaLabel}
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5"
-                    aria-hidden="true"
-                  />
+                  {isInternalLink ? "Ver opciones →" : dict.services.ctaLabel}
+                  {!isInternalLink && (
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  )}
                 </span>
               </a>
             );

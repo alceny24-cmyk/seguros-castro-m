@@ -10,6 +10,7 @@ export type ServiceItem = {
   title: string;
   description: string;
   whatsappMessage: string;
+  href?: string;
 };
 
 export type FaqItemContent = {
@@ -46,6 +47,7 @@ export type Dictionary = {
     ctaCall: string;
     note: string;
     imageAlt: string;
+    priceBadge: string;
   };
   services: {
     title: string;
@@ -76,6 +78,21 @@ export type Dictionary = {
   faq: {
     title: string;
     items: FaqItemContent[];
+  };
+  leadFunnel: {
+    productName: string;
+    productTagline: string;
+    coverage: string;
+    price: string;
+    highlights: string[];
+    title: string;
+    subtitle: string;
+    namePlaceholder: string;
+    phonePlaceholder: string;
+    insuranceLabel: string;
+    insuranceOptions: string[];
+    cta: string;
+    messageTemplate: string;
   };
   contact: {
     title: string;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const WHATSAPP = "18296656648";
 
@@ -116,38 +117,34 @@ export function VehiculoFunnel() {
       {/* ══════════════════════════════════
           HERO
       ══════════════════════════════════ */}
-      <section className="px-5 pt-6 pb-10 text-center">
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-300/60">
-          Inversiones Castro &amp; M · Seguro de Vehículos
-        </p>
-
-        <h1 className="text-[clamp(1.9rem,7vw,2.75rem)] font-extrabold leading-[1.1] text-white">
-          Descubre qué opciones<br className="hidden sm:block" /> de seguro están<br className="hidden sm:block" /> disponibles para tu vehículo.
-        </h1>
-
-        <p className="mt-3 text-base text-white/65 max-w-xs mx-auto leading-relaxed">
-          Coloca los datos de tu vehículo y un asesor te orientará sobre las coberturas disponibles.
-        </p>
-
-        <div className="mx-auto mt-6 inline-flex flex-col items-center rounded-2xl border border-white/12 bg-white/6 px-6 py-4 text-left gap-2.5">
-          {[
-            { icon: "🚗", text: "Vehículos modelo 2011 al 2020" },
-            { icon: "📋", text: "Sin compromiso — Solo orientación" },
-            { icon: "⚡", text: "Respuesta por WhatsApp" },
-          ].map(({ icon, text }) => (
-            <div key={text} className="flex items-center gap-2.5 text-sm text-white/75">
-              <span>{icon}</span>
-              <span>{text}</span>
-            </div>
-          ))}
+      <section className="pb-6 text-center">
+        {/* Imagen del anuncio — ocupa todo el ancho en mobile */}
+        <div className="relative w-full overflow-hidden">
+          <Image
+            src="/images/vehiculo-og.png"
+            alt="¿Tu vehículo es 2011–2015? Todavía puede estar asegurado."
+            width={1086}
+            height={1448}
+            priority
+            className="w-full object-cover"
+            style={{ maxHeight: "85dvh", objectPosition: "top" }}
+          />
+          {/* Gradiente inferior para transición suave al fondo oscuro */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#081729] to-transparent" />
         </div>
 
-        <button
-          onClick={scrollToForm}
-          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition hover:bg-[#1ebe5c]"
-        >
-          Ver opciones para mi vehículo →
-        </button>
+        <div className="px-5 pt-4">
+          <p className="text-base text-white/65 max-w-xs mx-auto leading-relaxed">
+            Coloca los datos de tu vehículo y un asesor te orientará sobre las coberturas disponibles.
+          </p>
+
+          <button
+            onClick={scrollToForm}
+            className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-7 py-3.5 text-base font-bold text-white shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition hover:bg-[#1ebe5c]"
+          >
+            Ver opciones para mi vehículo →
+          </button>
+        </div>
       </section>
 
       {/* ══════════════════════════════════

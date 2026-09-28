@@ -11,9 +11,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  experimental: {
-    vercelToolbar: false,
-  },
   async headers() {
     return [
       {
